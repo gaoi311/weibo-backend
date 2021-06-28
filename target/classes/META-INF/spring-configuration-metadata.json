@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "upload",
+      "type": "com.buuble.blog.config.ImgUploadConfig",
+      "sourceType": "com.buuble.blog.config.ImgUploadConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "upload.folder-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.buuble.blog.config.ImgUploadConfig"
+    },
+    {
+      "name": "upload.layer-count",
+      "type": "java.lang.Integer",
+      "sourceType": "com.buuble.blog.config.ImgUploadConfig"
+    },
+    {
+      "name": "upload.static-access-path",
+      "type": "java.lang.String",
+      "sourceType": "com.buuble.blog.config.ImgUploadConfig"
+    },
+    {
+      "name": "upload.upload-folder",
+      "type": "java.lang.String",
+      "sourceType": "com.buuble.blog.config.ImgUploadConfig"
+    }
+  ],
+  "hints": []
+}
