@@ -68,7 +68,7 @@ public class UserServiceImpl implements UserService {
             result.add(commentInfo);
             commentInfo.put("user", userInfo);
             commentInfo.put("blog", blogInfo);
-            commentInfo.put("comment", comment);
+            commentInfo.put("comment", comment.getContent());   // 与接口不符合，只需要内容即可
             Blog blog = blogRepository.findBlogById(comment.getBlogId());
             User user = userRepository.findUserById(comment.getUserId());
             userInfo.put("userId", user.getId());

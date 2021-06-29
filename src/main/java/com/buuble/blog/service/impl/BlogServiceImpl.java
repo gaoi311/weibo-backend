@@ -133,22 +133,22 @@ public class BlogServiceImpl implements BlogService {
         blogRepository.save(blog);
         String picturePaths = "";
         int i = 1;
-        for(MultipartFile blogPicture : blogPictures){
+        for (MultipartFile blogPicture : blogPictures) {
             String originalName = blogPicture.getOriginalFilename();
             String[] s = originalName.split("\\.");
-            String backName = s[s.length-1];
-            File file = new File(System.getProperty("user.dir")+"\\src\\main\\resources\\static\\blogImages\\"+blog.getId()+"_"+i+"."+backName);
+            String backName = s[s.length - 1];
+            File file = new File(System.getProperty("user.dir") + "\\src\\main\\resources\\static\\blogImages\\" + blog.getId() + "_" + i + "." + backName);
             try {
                 blogPicture.transferTo(file);
-                if(i == 1) picturePaths += "blogImages/"+blog.getId()+"_"+i+"."+backName;
-                else picturePaths += "|blogImages/"+blog.getId()+"_"+i+"."+backName;
+                if (i == 1) picturePaths += "blogImages/" + blog.getId() + "_" + i + "." + backName;
+                else picturePaths += "|blogImages/" + blog.getId() + "_" + i + "." + backName;
                 i++;
             } catch (IOException e) {
                 e.printStackTrace();
                 break;
             }
         }
-        if(i<=blogPictures.length) return null;
+        if (i <= blogPictures.length) return null;
 
         blog.setPictures(picturePaths);
         Blog b2 = blogRepository.save(blog);

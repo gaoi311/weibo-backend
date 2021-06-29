@@ -72,7 +72,6 @@ public class BlogHandler {
         }
 
 
-
         Blog blog = blogService.addBlog(userId, blogTopic, blogContent, file);
         if (blog == null) {
             msg = "不存在该用户或者该话题";
